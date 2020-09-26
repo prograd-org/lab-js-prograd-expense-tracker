@@ -30,23 +30,19 @@ Complete the frontend as per the design given in the output.
 
 ![Image description]()
 
-### Progression 2: 
+### Progression 2: STORE MY VALUES
 
-Setup `EventListeners`, so that we can add or remove different ingredients by clicking on the respective ingredient buttons. That's the whole point of it.
+Setup `localStorage`, so that we can add or remove the income by clicking on the respective values. Positive values define income and negative values defines expenses. That's the whole point of it.
+
+![Image description]()
+
+### Progression 3: YOUR BALANCE
+Show the final balance and also the total income and total expense separately as shown in the output.
+
+
+### Progression 4: TRANSACTION HISTORY 
+List out the total transactions as a list.
 
 ![Image description]()
 
-### Challenge 1: SHOW EM UP
-
-Make the ingredient buttons pop up based on their current active state. This would help customers identify what ingredients they've selected and what's left out.
-
-### Challenge 2: TAKE THE ORDER
-
-Show the customer only the ingredients that they've selected on the chalk board.
-![Image description]()
-### Challenge 3: BILL TIME
-
-The customer has had a good time customizing his cake. Time for him to pay. Use ingredient prices to calculate the cost of a cake and display it to the customer.
-
-![Image description]()
 Happy Coding ProGrads❤️
