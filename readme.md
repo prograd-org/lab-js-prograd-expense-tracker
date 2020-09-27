@@ -28,21 +28,21 @@ And finally, create a pull request so your ProGrad Mentor (PM) can review your w
 Complete the frontend as per the design given in the output.
 	
 
-![Image description]()
+![Image description](https://i1.faceprep.in/ProGrad/exp-1.png)
 
 ### Progression 2: STORE MY VALUES
 
 Setup `localStorage`, so that we can add or remove the income by clicking on the respective values. Positive values define income and negative values defines expenses. That's the whole point of it.
 
-![Image description]()
+![Image description](https://i1.faceprep.in/ProGrad/exp-3.png)
 
 ### Progression 3: YOUR BALANCE
 Show the final balance and also the total income and total expense separately as shown in the output.
 
-
+![Image description](https://i1.faceprep.in/ProGrad/exp-2.png)
 ### Progression 4: TRANSACTION HISTORY 
 List out the total transactions as a list.
 
-![Image description]()
+![Image description](https://i1.faceprep.in/ProGrad/exp-2.png)
 
 Happy Coding ProGrads❤️
