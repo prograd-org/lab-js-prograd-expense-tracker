@@ -3,6 +3,7 @@ window.onload = () => renderTranscationList();
 let addtranscation = document.querySelector(".btn");
 addtranscation.addEventListener("click", transcationlist);
 
+
 function transcationlist() {
     let transcationname = document.querySelector("#text").value;
     let transcationamount = Number.parseFloat(
@@ -83,15 +84,17 @@ let createlist = (transcationname, transcationamount, positive) => {
     let liclass = positive ? "plus" : "minus";
     let symbol = positive ? "+ " : "";
 
+    
     //label tag
     let label = document.createElement("label");
     label.innerHTML = transcationname;
 
-    //spantag
 
+    //spantag
     let span = document.createElement("span");
     span.setAttribute("class", "money " + liclass);
     span.innerHTML = symbol + transcationamount;
+
 
     // li tag
     let li = document.createElement("li");
