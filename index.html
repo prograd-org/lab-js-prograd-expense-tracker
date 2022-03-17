@@ -1,3 +1,4 @@
+@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +14,13 @@
     <div class="container">
       <h4>Your Balance</h4>
       <h1 id="balance">$0.00</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Expense Tracker</title>
+</head>
 
       <div class="inc-exp-container">
         <div>
@@ -23,9 +31,27 @@
           <h4>Expense</h4>
           <p id="money-minus" class="money minus">-$0.00</p>
         </div>
+<body>
+  <h2> ProGrad Expense Tracker</h2>
+
+  <div class="container">
+    <h4>Your Balance</h4>
+    <h1 id="balance">$0.00</h1>
+
+    <div class="inc-exp-container">
+      <div>
+        <h4>Income</h4>
+        <p id="money-plus" class="money plus">+$0.00</p>
       </div>
-    
+      <div>
+        <h4>Expense</h4>
+        <p id="money-minus" class="money minus">-$0.00</p>
+      </div>
+
       <div class="histroy">
+    </div>
+
+    <div class="histroy">
       <h3> Transaction History</h3>
       <ul id="list" class="list">
       </ul>
@@ -46,7 +72,66 @@
         <button class="btn">Add transaction</button>
       </form>
     </div>
+    <h3>Add new transaction</h3>
+    <form id="form">
+      <div class="form-control">
+        <label for="text">Text(max 20 letter)</label>
+        <input type="text" id="text" placeholder="Enter text..." />
+      </div>
+      <div class="form-control">
+        <label for="amount">Amount <br />
+          (negative - expense, positive - income)</label>
+        <input type="number" id="amount" placeholder="Enter amount..." />
+      </div>
+      <button class="btn">Add transaction</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 
     <script src="script.js"></script>
   </body>
 </html>
+</html> 
+ 37  script.js 
+Viewed
+@@ -1 +1,38 @@
+var listEle = document.querySelector('#list');
+var button = document.querySelector('.btn');
+var income = 0;
+var expense = 0;
+function display() {
+    for (var i = 0; i < localStorage.length; i++) {
+        var transactionList = document.createElement('li');
+        var amount = localStorage.getItem(localStorage.key(i));
+        var input = localStorage.key(i);
+        if (amount > 0) {
+            income = income + parseInt(amount);
+            transactionList.setAttribute('class', 'plus');
+            //   transactionList.appendChild(document.createTextNode(input + '     ' + amount));
+            transactionList.textContent = input + '     ' + amount;
+        } else {
+            expense -= amount;
+            transactionList.setAttribute('class', 'minus');
+            transactionList.textContent = input + '     ' + amount;
+        }
+        listEle.appendChild(transactionList);
+    }
+    document.querySelector('#money-plus').textContent = '$' + income;
+    document.querySelector('#money-minus').textContent = '$' + expense;
+    document.querySelector('#balance').textContent = '$' + (income - expense);
+}
+
+//add transaction to the localStorage on click of "Add transaction" button
+button.addEventListener('click', addItems);
+
+function addItems() {
+    var input = document.querySelector('#text').value;
+    var amount = document.querySelector('#amount').value;
+    window.localStorage.setItem(input, amount);
+}
+
+window.onload = () => {
+    display();
+} 
