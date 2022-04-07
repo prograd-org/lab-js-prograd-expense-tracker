@@ -45,4 +45,4 @@ function _(id) {
 
 window.onload = () => {
   history();
-};
+}; 
